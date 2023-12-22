@@ -1,1 +1,93 @@
 # NoSQL-Social-Network-API
+
+## Description
+
+
+
+## Table of Contents
+* [User Story](#user-story)
+* [Project Requirements](#project-requirements)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Sources](#sources)
+* [Issues](#issues)
+* [Links](#links)
+* [Collaborators](#collaborators)
+* [License](#license)
+
+## User Story
+AS A social media startup
+I WANT an API for my social network that uses a NoSQL database
+SO THAT my website can handle large amounts of unstructured data
+
+## Project Requirements
+GIVEN a social network API
+WHEN I enter the command to invoke the application
+THEN my server is started and the Mongoose models are synced to the MongoDB database
+WHEN I open API GET routes in Insomnia for users and thoughts
+THEN the data for each of these routes is displayed in a formatted JSON
+WHEN I test API POST, PUT, and DELETE routes in Insomnia
+THEN I am able to successfully create, update, and delete users and thoughts in my database
+WHEN I test API POST and DELETE routes in Insomnia
+THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
+
+## Installation
+
+## Usage
+
+
+## Sources
+packages, dependencies, and technologies used in this application:
+
+* [Insomnia](https://docs.insomnia.rest/)
+* [express](https://expressjs.com/)
+* [express-session](https://www.npmjs.com/package/express-session)
+* [express-handlebars](https://www.npmjs.com/package/express-handlebars)
+* [Node](https://nodejs.org/en/docs)
+* [MySQL](https://dev.mysql.com/doc/)
+* [sequelize](https://sequelize.org/master/)
+* [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
+* [dotenv](https://www.npmjs.com/package/dotenv)
+* [fs](https://nodejs.org/api/fs.html)
+* [Nodemon](https://nodemon.io/)
+* [handlebars](https://handlebarsjs.com/)
+* [bcrypt](https://www.npmjs.com/package/bcrypt)
+* [Bulma](https://bulma.io/documentation/overview/start/)
+
+Website sources and research information 
+- [Sequelize Data types](https://sequelize.org/docs/v7/models/data-types/)
+- [Sequelize Data types for dates](https://sebhastian.com/sequelize-date-format/)
+- [Handlebars documentation](https://docs.airship.com/guides/messaging/user-guide/personalization/handlebars/basics/)
+- [Bulma Documentation](https://bulma.io/documentation/overview/start/)
+
+## Issues
+
+## Links
+
+- [GitHub](https://github.com/erica-210/NoSQL-Social-Network-API)
+
+## Collaborators
+[Erica San Miguel](https://github.com/erica-210)
+
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Copyright (c) [2023] [NoSQL-Social-Network-API]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
