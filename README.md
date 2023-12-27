@@ -39,26 +39,18 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 ## Sources
 packages, dependencies, and technologies used in this application:
 
-* [Insomnia](https://docs.insomnia.rest/)
+* [date-fns](https://www.npmjs.com/package/date-fns)
 * [express](https://expressjs.com/)
-* [express-session](https://www.npmjs.com/package/express-session)
-* [express-handlebars](https://www.npmjs.com/package/express-handlebars)
+* [mongoose](https://www.npmjs.com/package/mongoose)
 * [Node](https://nodejs.org/en/docs)
-* [MySQL](https://dev.mysql.com/doc/)
-* [sequelize](https://sequelize.org/master/)
-* [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
-* [dotenv](https://www.npmjs.com/package/dotenv)
-* [fs](https://nodejs.org/api/fs.html)
 * [Nodemon](https://nodemon.io/)
-* [handlebars](https://handlebarsjs.com/)
-* [bcrypt](https://www.npmjs.com/package/bcrypt)
-* [Bulma](https://bulma.io/documentation/overview/start/)
+* [mongoose-type-email](https://www.npmjs.com/package/mongoose-type-email)
+
 
 Website sources and research information 
 - [Sequelize Data types](https://sequelize.org/docs/v7/models/data-types/)
-- [Sequelize Data types for dates](https://sebhastian.com/sequelize-date-format/)
-- [Handlebars documentation](https://docs.airship.com/guides/messaging/user-guide/personalization/handlebars/basics/)
-- [Bulma Documentation](https://bulma.io/documentation/overview/start/)
+- [Mongoose Documentation](https://mongoosejs.com/docs/guide.html)
+
 
 ## Issues
 
