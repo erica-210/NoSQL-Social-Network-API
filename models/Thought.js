@@ -1,5 +1,32 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
 const { format } = require("date-fns");
+
+const reactionSchema = new Schema(
+  {
+    reactionId: {
+      type: Schema.Types.ObjectId,
+      default: () => new Types.ObjectId(),
+    },
+    reactionBody: {
+      type: String,
+      required: true,
+      maxlength: 280,
+    },
+    username: {
+      type: String,
+      required: true,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+  },
+  {
+    toJSON: {
+      getters: true,
+    },
+  }
+);
 
 const thoughtSchema = new Schema(
   {
@@ -25,6 +52,11 @@ const thoughtSchema = new Schema(
     },
   }
 );
+
+// Define a getter method for formatted timestamp
+reactionSchema.virtual("formattedCreatedAt").get(function () {
+  return format(this.createdAt, "yyyy-MM-dd HH:mm:ss");
+});
 
 // Define a getter method for formatted timestamp
 thoughtSchema.virtual("formattedCreatedAt").get(function () {
