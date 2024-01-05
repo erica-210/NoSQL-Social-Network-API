@@ -81,24 +81,12 @@ module.exports = {
   // adding reactions to a thought
   async addReaction(req, res) {
     try {
-      const thought = await Thought.findById(req.params.thoughtId);
+      const thought = await Thought.findByIdAndUpdate(
+        req.params.thoughtId,
+        {$push: {reactions: req.body}},
+        { new: true }
+        );
 
-      if (!thought) {
-        return res.status(404).json({ message: "No thought with that ID" });
-      }
-
-      const reactionId = req.params.reactionId;
-
-      // Ensure the reactionId is not already in the reaction list
-      if (thought.reactions.includes(reactionId)) {
-        return res
-          .status(400)
-          .json({ message: "Reaction already exists in the list" });
-      }
-
-      // Add the reactionId to the thought list
-      thought.reactions.push(reactionId);
-      await thought.save();
 
       res.json({ message: "reaction added successfully", thought });
     } catch (err) {

@@ -19,6 +19,7 @@ const reactionSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+      get: (x) => format(x, "yyyy-MM-dd HH:mm:ss")
     },
   },
   {
@@ -39,6 +40,7 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+      get: (x) => format(x, "yyyy-MM-dd HH:mm:ss")
     },
     username: {
       type: String,
@@ -53,15 +55,7 @@ const thoughtSchema = new Schema(
   }
 );
 
-// Define a getter method for formatted timestamp
-reactionSchema.virtual("formattedCreatedAt").get(function () {
-  return format(this.createdAt, "yyyy-MM-dd HH:mm:ss");
-});
 
-// Define a getter method for formatted timestamp
-thoughtSchema.virtual("formattedCreatedAt").get(function () {
-  return format(this.createdAt, "yyyy-MM-dd HH:mm:ss");
-});
 
 // Create a virtual field 'reactionCount' to retrieve the length of the reactions array
 thoughtSchema.virtual("reactionCount").get(function () {

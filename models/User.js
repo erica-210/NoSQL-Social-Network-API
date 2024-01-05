@@ -1,6 +1,4 @@
-const mongoose = require("mongoose");
-require("mongoose-type-email");
-const { Schema, model } = mongoose;
+const { Schema, model } =  require("mongoose");
 
 // Schema to create User model
 const userSchema = new Schema({
@@ -11,19 +9,20 @@ const userSchema = new Schema({
     trim: true,
   },
   email: {
-    type: mongoose.SchemaTypes.Email,
+    type: String,
     unique: true,
     required: true,
+    match: [/^[a-zA-Z0-9. _-]+@[a-zA-Z0-9]/, 'not a valid email']
   },
   thoughts: [
     {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "thought",
     },
   ],
   friends: [
     {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "user",
     },
   ],
