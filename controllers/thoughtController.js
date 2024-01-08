@@ -67,7 +67,7 @@ module.exports = {
   // Delete a thought by its id
   async deleteThought(req, res) {
     try {
-      const deletedThought = await Thought.findByIdAndRemove(req.params.thoughtId);
+      const deletedThought = await Thought.findByIdAndDelete(req.params.thoughtId);
 
       if (!deletedThought) {
         return res.status(404).json({ message: "No thought with that ID" });
@@ -96,21 +96,17 @@ module.exports = {
   // removing reactions from a thought
   async removeReaction(req, res) {
     try {
-      const thought = await Thought.findById(req.params.thoughtId);
+      const deltedReaction = await Thought.findByIdAndUpdate(
+        req.params.thoughtId,
+        {$pull: {reactions: req.params.reactionId}},
+        { new: true }
+        );
 
-      if (!thought) {
+      if (!deltedReaction) {
         return res.status(404).json({ message: "No thought with that ID" });
       }
 
-      const reactionId = req.params.reactionId;
-
-      // Filter out the reactionId from the reaction list
-      thought.reactions = thought.reactions.filter(
-        (reaction) => reaction.toString() !== reactionId
-      );
-      await thought.save(); 
-
-      res.json({ message: "Reaction removed successfully", thought });
+      res.json({ message: "Reaction removed successfully", deltedReaction });
     } catch (err) {
       res.status(500).json(err);
     }

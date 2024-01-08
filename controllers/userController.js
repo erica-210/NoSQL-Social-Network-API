@@ -63,8 +63,6 @@ module.exports = {
         return res.status(404).json({ message: "No user with that ID" });
       }
 
-      // await Thought.deleteMany({ _id: { $in: deletedUser.thoughts } });
-
       res.json({ message: "User deleted successfully" });
     } catch (err) {
       res.status(500).json(err);
@@ -87,21 +85,17 @@ module.exports = {
   // removing friends from a user's friend list
   async removeFriend(req, res) {
     try {
-      const user = await User.findById(req.params.userId);
+      const deletedFriend = await User.findByIdAndUpdate(
+        req.params.userId,
+        {$pull: {friends: req.params.friendId}},
+        { new: true }
+        );
 
-      if (!user) {
+      if (!deletedFriend) {
         return res.status(404).json({ message: "No user with that ID" });
       }
 
-      const friendId = req.params.friendId;
-
-      // Filter out the friendId from the friend list
-      user.friends = user.friends.filter(
-        (friend) => friend.toString() !== friendId
-      );
-      await user.save();
-
-      res.json({ message: "Friend removed successfully", user });
+      res.json({ message: "Friend removed successfully", deletedFriend });
     } catch (err) {
       res.status(500).json(err);
     }
