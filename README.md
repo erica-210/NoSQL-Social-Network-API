@@ -50,8 +50,9 @@ Website sources and research information
 - [Sequelize Data types](https://sequelize.org/docs/v7/models/data-types/)
 - [Mongoose Documentation](https://mongoosejs.com/docs/guide.html)
 
+Tutoring
+- 
 
-## Issues
 
 ## Links
 
