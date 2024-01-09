@@ -32,8 +32,11 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 ## Installation
 
+npm run start
+
 ## Usage
 
+![Demo](./assets/media/demo.gif)
 
 ## Sources
 packages, dependencies, and technologies used in this application:
@@ -51,12 +54,13 @@ Website sources and research information
 - [Mongoose Documentation](https://mongoosejs.com/docs/guide.html)
 
 Tutoring
-- 
+- Jose Lopez
 
 
 ## Links
 
 - [GitHub](https://github.com/erica-210/NoSQL-Social-Network-API)
+- [Demo](https://drive.google.com/file/d/1CkSDxmZXh0V6ckQC50jH4YqgTuMZQt-r/view)
 
 ## Collaborators
 [Erica San Miguel](https://github.com/erica-210)
